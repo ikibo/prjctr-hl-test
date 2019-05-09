@@ -17,7 +17,7 @@ def create_socket():
     s_ = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s_.settimeout(5)
     s_.connect((ip, 80))
-    s_.send(bytes("GET / HTTP/1.1\r\n".encode("utf-8")))
+    s_.send(bytes("GET /?{} HTTP/1.1\r\n".format(random.randint(0, 2000)).encode("utf-8")))
     for header_ in headers:
         s_.send(bytes("{}\r\n".format(header_).encode("utf-8")))
     return s_
