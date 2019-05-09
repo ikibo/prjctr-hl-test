@@ -1,0 +1,6 @@
+version: "3.7"
+services:
+    attacker:
+        image: slowloris:latest
+        environment:
+             - REMOTE_VICTIM=${REMOTE_VICTIM}

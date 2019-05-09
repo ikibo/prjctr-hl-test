@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+    attacker:
+        env_file: ./.env
+        image: slowloris:latest
+        environment:
+             - REMOTE_VICTIM=${REMOTE_VICTIM}
+
+    nginx:
+        image: nginx:latesr
+        restart: always
+        ports:
+            - "80:80"
