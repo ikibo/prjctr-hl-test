@@ -20,6 +20,6 @@
   * increase OS softlimit nofile option to 4096 for nginx(www-data) user to facilitate the above 
   
   Build & start container from within victim folder:
-  * build docker build -t nginx .
+  * build: docker build -t nginx .
   * run: docker-compose up
   
